@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning Hub — Nested Subjects</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Learning Hub</h1>
+      <p>Choose a subject to reveal its topics. Tap a topic to open its dedicated page.</p>
+    </header>
+
+    <!-- Mathematics -->
+    <div class="subject" role="button" tabindex="0" aria-expanded="false" data-target="math">
+      <div class="row">
+        <div class="name">Mathematics</div>
+        <div class="hint">Show topics <span class="chevron">›</span></div>
+      </div>
+    </div>
+    <ul id="math" class="topics" aria-label="Mathematics topics">
+      <li><a href="math/algebra.html">Algebra</a></li>
+      <li><a href="math/geometry.html">Geometry</a></li>
+      <li><a href="math/calculus.html">Calculus</a></li>
+      <li><a href="math/statistics.html">Statistics</a></li>
+    </ul>
+
+    <!-- Science -->
+    <div class="subject" role="button" tabindex="0" aria-expanded="false" data-target="science">
+      <div class="row">
+        <div class="name">Science</div>
+        <div class="hint">Show topics <span class="chevron">›</span></div>
+      </div>
+    </div>
+    <ul id="science" class="topics" aria-label="Science topics">
+      <li><a href="science/physics.html">Physics</a></li>
+      <li><a href="science/chemistry.html">Chemistry</a></li>
+      <li><a href="science/biology.html">Biology</a></li>
+      <li><a href="science/astronomy.html">Astronomy</a></li>
+    </ul>
+
+    <!-- History -->
+    <div class="subject" role="button" tabindex="0" aria-expanded="false" data-target="history">
+      <div class="row">
+        <div class="name">History</div>
+        <div class="hint">Show topics <span class="chevron">›</span></div>
+      </div>
+    </div>
+    <ul id="history" class="topics" aria-label="History topics">
+      <li><a href="history/ancient.html">Ancient Civilizations</a></li>
+      <li><a href="history/middleages.html">Middle Ages</a></li>
+      <li><a href="history/worldwars.html">World Wars</a></li>
+      <li><a href="history/modern.html">Modern History</a></li>
+    </ul>
+
+    <footer>
+      <p>Tip: Use Enter or Space to toggle subjects when focused.</p>
+    </footer>
+  </div>
+</body>
+</html>
