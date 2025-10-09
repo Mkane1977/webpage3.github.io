@@ -1,0 +1,153 @@
+/* Basic responsive styles for the nested-menu site */
+:root {
+  --bg: #f7f8fb;
+  --text: #1f2937;
+  --accent: #2563eb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header h1 {
+  margin: 12px 0 4px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+header p {
+  margin: 0 0 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Subject cards */
+.subject {
+  display: block;
+  width: 100%;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 12px 0;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: 2px solid transparent;
+  transition: transform 0.05s ease, border-color 0.15s ease;
+}
+
+.subject:focus {
+  border-color: var(--accent);
+}
+
+.subject:hover { transform: translateY(-1px); }
+
+.subject .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.subject .name {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.subject .hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Chevron */
+.chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.subject[aria-expanded="true"] .chevron {
+  transform: rotate(90deg);
+}
+
+/* Topics list */
+.topics {
+  display: none;
+  list-style: none;
+  padding: 0 0 0 12px;
+  margin: 10px 0 22px 12px;
+  border-left: 3px solid #e5e7eb;
+}
+
+.topics.open { display: block; }
+
+.topics li {
+  margin: 10px 0;
+}
+
+.topics a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent);
+}
+.topics a:hover { text-decoration: underline; }
+
+/* Back button (topic pages) */
+.back-button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  margin-top: 14px;
+}
+
+main p {
+  line-height: 1.6;
+}
+
+figure {
+  margin: 18px 0;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+figure figcaption {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+/* Footer */
+footer {
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Small devices */
+@media (max-width: 520px) {
+  header h1 { font-size: 1.6rem; }
+  .subject .name { font-size: 1.05rem; }
+}
